@@ -15,6 +15,7 @@ import pages.LoginPage;
 import support.CreateBrowser;
 
 
+// Comment apenas para mudar no GIT
 
 @RunWith(DataDrivenTestRunner.class)
 @DataLoader(filePaths = "MainTest.csv")
