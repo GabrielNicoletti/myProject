@@ -14,7 +14,6 @@ import org.easetech.easytest.runner.DataDrivenTestRunner;
 import pages.LoginPage;
 import support.CreateBrowser;
 
-
 // Comment apenas para mudar no GIT
 
 @RunWith(DataDrivenTestRunner.class)
@@ -28,43 +27,32 @@ public class MainTest {
 		String url = "https://intranet.daitangroup.com/";
 		chrome = CreateBrowser.createChrome(url);
 	}
-	
+
 	@Test
 	public void loginIntranet(
-			@Param(name="login")String login,
-			@Param(name="senha")String senha,
-			@Param(name="tabname")String tabname
-			) {
+			@Param(name = "login") String login,
+			@Param(name = "senha") String senha,
+			@Param(name = "tabname") String tabname) {
 
-        //LoginPage loginGabriel  = new LoginPage(chrome);
+		// LoginPage loginGabriel = new LoginPage(chrome);
 
-        String textoBotaoHome = new LoginPage(chrome)
-            .digitarLogin(login)
-            .digitarSenha(senha)
-            .clicarOk()
-            .identificaTextBotaoHome();
+		String textoBotaoHome = new LoginPage(chrome).digitarLogin(login).digitarSenha(senha).clicarOk()
+				.identificaTextBotaoHome();
 
-        /* Fiz esse Try/Catch com sleep para treinar caso eu precise
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException ex) {
-            System.out.println ("Puxa, estava dormindo! Você me acordou");
-        }
+		/*
+		 * Fiz esse Try/Catch com sleep para treinar caso eu precise try {
+		 * Thread.sleep(5000); } catch (InterruptedException ex) { System.out.println
+		 * ("Puxa, estava dormindo! Você me acordou"); }
+		 * 
+		 */
 
-         */
-
-
-
-        assertEquals(tabname,textoBotaoHome);
+		assertEquals(tabname, textoBotaoHome);
 
 	}
 
-    @After
-    public void tearDown(){
-        chrome.close();
-    }
-		
-
-
+	@After
+	public void tearDown() {
+		chrome.close();
+	}
 
 }
