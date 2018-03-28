@@ -36,7 +36,9 @@ public class MainTest {
 
 		// LoginPage loginGabriel = new LoginPage(chrome);
 
-		String textoBotaoHome = new LoginPage(chrome).digitarLogin(login).digitarSenha(senha).clicarOk()
+		String textoBotaoHome = new LoginPage(chrome)
+				.digitarLogin(login).digitarSenha(senha).
+				clicarOk()
 				.identificaTextBotaoHome();
 
 		/*
